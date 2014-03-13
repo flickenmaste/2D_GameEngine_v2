@@ -1,5 +1,5 @@
 // Will Gilstrap - Game Engine
-// 2/11/2014
+// 3/13/2014
 
 #include <Engine.h>
 
@@ -90,8 +90,7 @@ void Engine::RunGame()
 
 	Sprite * testers = new Sprite("face.bmp",256,256,tbyte::Vector4(1,1,1,1),window); 
 	AnimatedSprite * tester = new AnimatedSprite("MegamanXSheet.xml",window);
-	FontManager * fntMan = new FontManager();
-	fntMan->LoadFont("NESish.xml");
+	FontManager::Instance().LoadFont("NESish.xml");
 
 	float oldTimeSinceStart = 0;
 	// Draw stuff
@@ -109,8 +108,9 @@ void Engine::RunGame()
 		glViewport (0, 0, g_gl_width, g_gl_height);
 
 		tester->Update();
+		FontManager::Instance().DrawString("Hello.",Vector2(100,g_gl_height/2),1);
 
-	//	q.Draw();
+		//	q.Draw();
 		glfwPollEvents();
 		// put the stuff we've been drawing onto the display
 		glfwSwapBuffers (window);

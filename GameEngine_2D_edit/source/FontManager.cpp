@@ -1,12 +1,21 @@
-#include "FontManager.h"
+#include <FontManager.h>
 
+FontManager* FontManager::MInstance = 0;
+
+FontManager& FontManager::Instance() 
+{ 
+	if (MInstance == 0) 
+		MInstance = new FontManager(); 
+	return *MInstance; 
+}
 
 FontManager::FontManager(void)
 {
+	atexit(&CleanUp);
 
 
-/*	iSprite.LoadVertShader("fontVert.glsl");
-	iSprite.LoadFragShader("fontFrag.glsl");
+/*	iSprite.LoadVertShader("../resources/fontVert.glsl");
+	iSprite.LoadFragShader("../resources/fontFrag.glsl");
 	iSprite.LinkShaders();
 	*/
 	glGenBuffers(1,&PositionBuffer);
@@ -20,6 +29,12 @@ FontManager::FontManager(void)
 
 FontManager::~FontManager(void)
 {
+}
+
+void FontManager::CleanUp() 
+{ 
+	delete MInstance; 
+	MInstance = 0; 
 }
 
 void FontManager::LoadFont(const char * a_pFontSheet)
@@ -141,16 +156,24 @@ void FontManager::LoadFont(const char * a_pFontSheet)
 	
 	
 }
+void FontManager::LoadString(std::string str)
+{
+	DrawList.clear();
+	char c;
+	for(CharCount = 0; CharCount < str.length();CharCount++)
+	{
+		c = str.at(CharCount);
+		DrawList.push_back(charMap[c]);
+
+	}
+}
+
+
+
 void FontManager::DrawString(std::string str,Vector2 pos,float scale)
 {
-	LoadString(str,pos,scale);
-	glBlendFunc (iSprite.m_uSourceBlendMode, iSprite.m_uDestinationBlendMode);
-	glUseProgram(iSprite.m_ShaderProgram);
+	LoadString(str);
 
-	glActiveTexture(GL_TEXTURE0);
-	glUniform1i (iSprite.tex_location, 0); 
-
-	iSprite.SetScale(scale);
 
 	Char c;
 
@@ -189,24 +212,10 @@ void FontManager::DrawString(std::string str,Vector2 pos,float scale)
 	*iSprite.MVP =  (*Ortho * *iSprite.modelMatrix) ;
 
 
-	//	glUniformMatrix4fv (matrix_location, 1, GL_FALSE, modelMatrix->m_afArray);
-	//	glUniformMatrix4fv (view_location, 1, GL_FALSE, viewMatrix->m_afArray);
-	//	glUniformMatrix4fv (proj_location, 1, GL_FALSE, Ortho->m_afArray);
 
 	
-	glUniformMatrix4fv (iSprite.matrix_location, 1, GL_FALSE, iSprite.MVP->m_afArray);
+	
 	iSprite.Entity::Draw();
 }
 
-}
-void FontManager::LoadString(std::string str,Vector2 pos,float scale)
-{
-	DrawList.clear();
-	char c;
-	for(CharCount = 0; CharCount < str.length();CharCount++)
-	{
-		c = str.at(CharCount);
-		DrawList.push_back(charMap[c]);
-
-	}
 }

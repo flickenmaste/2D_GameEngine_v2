@@ -1,7 +1,10 @@
 #ifndef _FONT_MANAGER_H_
 #define _FONT_MANAGER_H_
+#include <Utilities.h>
 #include <tinyxml2.h>
-#include <AnimatedSprite.h>
+#include <Sprite.h>
+
+using namespace tinyxml2;
 
 struct Char
 {
@@ -31,12 +34,16 @@ struct Font
 class FontManager
 {
 public:
-	FontManager(void);
-	~FontManager(void);
+	static FontManager& Instance();
+
 	void LoadFont(const char * a_pFontSheet);
 	void DrawString(std::string str,Vector2 pos,float scale);
-	//private?
-	void LoadString(std::string str,Vector2 pos,float scale);
+private:
+	static void CleanUp();
+
+	FontManager(void);
+	~FontManager(void);
+	void LoadString(std::string str);
 
 	Sprite iSprite;
 	Font FontAtlas;
@@ -44,6 +51,7 @@ public:
 	std::vector<Char> DrawList;
 	int CharCount;
 
+	static FontManager* MInstance;
 
 	///future use
 	GLuint PositionBuffer;

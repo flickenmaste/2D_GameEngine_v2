@@ -1,7 +1,7 @@
 #include <Utilities.h>
 
 Matrix4  * Ortho;
-int g_gl_width = 1980;
+int g_gl_width = 1920;
 int g_gl_height = 1080;
 double deltaTime = 0;
 int frames;
@@ -134,3 +134,4 @@ double fps, elapsedTime;
 		glfwSetTime(0);
 		
 	}
+

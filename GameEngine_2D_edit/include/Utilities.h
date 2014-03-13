@@ -1,10 +1,30 @@
 #pragma once
 #ifndef _UTIL_H_
 #define _UTIL_H_
-
+#include <GL\glew.h>
 #include <GL\glfw3.h>
+
+
+//Terry's Math lib
 #include <TerrehByteMath.h>
 #include <SOIL.h>
+//other helper functions
+#include "GLLog.h"
+#include "TextFileReader.h"
+
+
+#include <string>
+#include <queue>
+#include <vector>
+#include <map>
+#include <fstream>
+#include <iostream>
+#include <assert.h>
+#include <functional>
+#include <cstdlib>
+
+
+
 
 using namespace tbyte;
 

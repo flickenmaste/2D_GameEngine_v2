@@ -1,5 +1,5 @@
 // Will Gilstrap - Game Engine
-// 2/11/2014
+// 3/13/2014
 
 #ifndef __SPRITE_H__
 #define __SPRITE_H__
