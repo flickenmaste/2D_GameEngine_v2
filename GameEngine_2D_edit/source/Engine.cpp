@@ -89,7 +89,7 @@ void Engine::RunGame()
 	Orthographic(0,g_gl_width,g_gl_height,0,0,-1,Ortho);
 
 	Sprite * testers = new Sprite("face.bmp",256,256,tbyte::Vector4(1,1,1,1),window); 
-	AnimatedSprite * tester = new AnimatedSprite("MegamanXSheet.xml",window);
+	AnimatedSprite * tester = new AnimatedSprite("MegamanXsheet.xml",window);
 	FontManager::Instance().LoadFont("NESish.xml");
 
 	float oldTimeSinceStart = 0;
@@ -108,7 +108,7 @@ void Engine::RunGame()
 		glViewport (0, 0, g_gl_width, g_gl_height);
 
 		tester->Update();
-		FontManager::Instance().DrawString("Hello.",Vector2(100,g_gl_height/2),1);
+		FontManager::Instance().DrawString("Terry\nsucks.",Vector2(100,g_gl_height/2),1);
 
 		//	q.Draw();
 		glfwPollEvents();

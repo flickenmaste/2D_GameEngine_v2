@@ -175,5 +175,6 @@
     <None Include="sheet.xml">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
 </Project>

@@ -58,6 +58,7 @@
     <ClInclude Include="libs\xml\tinyxml2.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="exampleFrag.glsl" />
     <None Include="exampleVert.glsl" />
     <None Include="sheet.xml">

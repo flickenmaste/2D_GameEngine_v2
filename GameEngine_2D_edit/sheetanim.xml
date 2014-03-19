@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animation name = "teleport" fps = "15">
+	<frame name ="Layer-5"/>
+	<frame name ="Layer-4"/>
+	<frame name ="Layer-3"/>
+	<frame name ="Layer-2"/>
+	<frame name ="Layer-1"/>
+</animation>
+<animation name = "idle blink" fps = "15">
+	<frame name ="Layer-5"/>
+	<frame name ="Layer-4"/>
+	<frame name ="Layer-3"/>
+	<frame name ="Layer-2"/>
+	<frame name ="Layer-1"/>
+</animation>
+<animation name = "run" fps = "15">
+	<frame name ="Layer-5"/>
+	<frame name ="Layer-4"/>
+	<frame name ="Layer-3"/>
+	<frame name ="Layer-2"/>
+	<frame name ="Layer-1"/>
+</animation>
+<animation name = "idle to run" fps = "15">
+	<frame name ="Layer-5"/>
+	<frame name ="Layer-4"/>
+	<frame name ="Layer-3"/>
+	<frame name ="Layer-2"/>
+	<frame name ="Layer-1"/>
+</animation>

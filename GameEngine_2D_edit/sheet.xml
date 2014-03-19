@@ -1,7 +1,8 @@
-<TextureAtlas width="256" height="1024" imagePath="sheet.png">
-	<SubTexture name="animated_sprite_0000_Layer-5.png" x="0" y="792" width="197" height="198"/>
-	<SubTexture name="animated_sprite_0001_Layer-4.png" x="0" y="393" width="205" height="197"/>
-	<SubTexture name="animated_sprite_0002_Layer-3.png" x="0" y="0" width="206" height="192"/>
-	<SubTexture name="animated_sprite_0003_Layer-2.png" x="0" y="194" width="205" height="197"/>
-	<SubTexture name="animated_sprite_0004_Layer-1.png" x="0" y="592" width="197" height="198"/>
-</TextureAtlas>
+<?xml version="1.0" encoding="UTF-8"?>
+<atlas width= "256" height= "1024" sheet="sheet.png" animations= "sheetanim.xml">
+	<sprite name="Layer-5" x0="0" x1="197" y1="792" y0="198"/>
+	<sprite name="Layer-4" x0="0" x1="205" y1="393" y0="197"/>
+	<sprite name="Layer-3" x0="0" x1="206" y1="0" y0="192"/>
+	<sprite name="Layer-2" x0="0" x1="205" y1="194" y0="197"/>
+	<sprite name="Layer-1" x0="0" x1="197" y1="592" y0="198"/>
+</atlas>
